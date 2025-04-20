@@ -58,7 +58,7 @@ fn App() -> impl IntoView {
 #[component]
 fn FancyMath() -> impl IntoView {
     // here we consume the global count signal with `use_context`
-    let count = use_context::<ReadSignal<u32>>()
+    let count = use_context::<ReadSignal<i32>>()
         // we know we just provided this in the parent component
         .expect("there to be a `count` signal provided");
     let is_even = move || count.get() & 1 == 0;
